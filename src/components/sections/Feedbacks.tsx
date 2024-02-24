@@ -26,19 +26,19 @@ const FeedbackCard: React.FC<{ index: number } & TTestimonial> = ({
 
       <div className="mt-7 flex items-center justify-between gap-1">
         <div className="flex flex-1 flex-col">
-          <p className="text-[16px] font-medium text-white">
+          {/* <p className="text-[16px] font-medium text-white">
             <span className="blue-text-gradient">@</span> {name}
-          </p>
+          </p> */}
           <p className="text-secondary mt-1 text-[12px]">
             {designation} of {company}
           </p>
         </div>
 
-        <img
+        {/* <img
           src={image}
           alt={`feedback_by-${name}`}
           className="h-10 w-10 rounded-full object-cover"
-        />
+        /> */}
       </div>
     </div>
   </motion.div>

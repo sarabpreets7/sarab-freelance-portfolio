@@ -14,8 +14,9 @@ const INITIAL_STATE = Object.fromEntries(
 
 const emailjsConfig = {
   serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  templateId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  accessToken: import.meta.env.VITE_EMAILJS_ACCESS_TOKEN,
+  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  accessToken: import.meta.env.VITE_EMAIL_JS_ACCESS_TOKEN,
+
 };
 
 const Contact = () => {
@@ -35,15 +36,16 @@ const Contact = () => {
     if (e === undefined) return;
     e.preventDefault();
     setLoading(true);
+console.log(emailjsConfig,'t');
 
     emailjs
       .send(
         emailjsConfig.serviceId,
         emailjsConfig.templateId,
         {
-          form_name: form.name,
+          from_name: form.name, // Changed from form_name to from_name
           to_name: config.html.fullName,
-          from_email: form.email,
+          from_email: form.email, // Make sure this matches the input field name for the sender's email
           to_email: config.html.email,
           message: form.message,
         },
