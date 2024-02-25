@@ -10,10 +10,10 @@ import { config } from "../../constants/config";
 const FeedbackCard: React.FC<{ index: number } & TTestimonial> = ({
   index,
   testimonial,
-  name,
+  // name,
   designation,
   company,
-  image,
+  // image,
 }) => (
   <motion.div
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
